@@ -1,3 +1,83 @@
 \section{Introduction}
   \label{sec:introduction}
 
+High Performance Computing(HPC) systems have been extensively used by researchers in academic and industrial of many fields. For example, domain experts uses HPC systems to run large scale physical simulations, big data analysis, or large multi-layer artificial neural networks. 
+
+On HPC system, users first need to configure and build their application before they can run their application, since different HPC system usually have different software and hardware configurations. However, configuring and building large scale applications can take a lot of time and effort. Also, it also requires application users to have enough application technical knowledge. Even worse, when users want to run legacy application developed years or even decades ago, required dependency libraries maybe hard to find or have difficulties compatible with current software stack. Even we can find compatible libraries, the legacy application may also output differently than years before due to today's different hardware. Moreover, commonly used institutional HPC systems usually have limited resource, so that they cannot serve all users at the same time. So, some kind of resource manger is usually installed in HPC system. so that each user can share part of resource of the HPC system without interfering with each other. However, large scale applications usually requires hours, days or even months before they can finish. But allocating such a long time slot is not easy on a busy HPC system. Once a user's allocation is near end, the user must take a checkpoint of the application to avoid lost of progress. Then, the user can choose whether to wait for another time slot or manually migrate to another HPC system. However, it imposes several challenges: First, checkpoint feature is not available in HPC applications. Developing checkpoint/restoration requires extensive programming efforts. Second, due to the intrinsic characteristic of computing pattern of HPC applications, taking a checkpoint anytime is not always possible. For example, large scale application usually process stage by stage. Checkpoint in the middle of a stage is difficult since it is hard to store complicated status information during the computation. Checkpoint is only possible in between stages. However, if current time slots is not enough to finish the current stage, it can be in serious trouble. Third, migrating to a different HPC system can be difficult too. Different HPC system may have different software stack, e.g. some required libraries may not available or library version is not compatible. Those problem cannot be fix unless the user has administration privilege, which is usually impossible. Also, different hardware architecture or configuration may output unexpected results. Even if we have all the compatible execution environment, build the application from scratch is still necessary, which may cost a lot of time for large applications.   
+
+
+Cloud computing system usually offers more reliable and easily deployable environment. For example, Linux container technology like Docker \cite{Docker} enables consistent software and hardware environment for development \cite{awscontainer}, build and deployment. By developing using Docker, developers only need to build their application once in Docker on their local machine, then the application can run on any Docker-enabled machine. It only needs to ship the Docker images to the target machine. Since Docker only create a thin virtual layer between the host and guest, the performance penalty is negligible. So, Docker can not only benefit cloud user, but also HPC  users. 
+
+However, Docker is not usually installed on current HPC systems. The main reason behind it is that Docker requires Linux kernel version to be higher than 3.8, but current main stream Linux kernel version is 2.6 \qguan{need citation}. For compatibility and security consideration, it would take years before HPC systems can upgrade their Linux kernel. Although Docker-enabled HPC systems have been build like Singularity \cite{kurtzer_2016_60736} and Shifter \cite{jacobsen2015contain}, they either requires specially customized HPC system or Docker daemon. However, those customizations would limit the practicability to deploying such system to other machines. First, most HPC systems are not allowed to be customized either in software or hardware by normal users. Second, customized Docker daemon could bring compatibility, security issue. Also, maintaining customization project could be limited, which may affect users.
+
+\begin{comment}
+\qguan{We may need to put some bullets to define what is needed for a successful workflow framework } \\
+\qguan{For example  1. Automation  }\\
+\qguan{2.Portability}\\
+\qguan{3.Flexibility} \\
+\qguan{4.Reproducibility}\\
+\qguan{5.Interfacing Continuous Integration?}\\
+\qguan{these requirements should be mapping to our contribution}
+\end{comment}
+
+We define that a successful HPC workflow framework should be:g
+
+\begin{enumerate}
+\item \textbf{Automation:} 
+Both the deployment of container-enabled execution environment and user's application should be done automatically. Any configuration, building and management should be done automatically and hidden from users, so that users don't need any extra expertise and technical knowledge to run their application. 
+\item \textbf{Portability:}
+The execution framework should have the portability to run across multiple platforms, including HPC system and cloud computing system.
+\item \textbf{Flexibility:}
+Users should have the flexibility choose different platform as their needs and also migrate to different platform during application running. The framework should also allow users to build their workflow logic into the runtime environment.
+\item \textbf{Reproducibility:}
+User's application should behave exactly the same across platforms regardless the underlying software and hardware configurations of different machine across locations and time.
+\item \textbf{Interfacing Continuous Integration:}
+Continuous Integration(IC) has been widely used in HPC application development workflow. The execution framework should be interfacing IC, so that it can effective free HPC domain users from handling complicated application configurations.  
+\end{enumerate}
+
+%our work
+In this work, we propose a new build and execution environment that can enable Docker on almost any current HPC systems. We call it Build Execution Environment(\texttt{BEE}). To overcome the Linux kernel version issue and provide more flexible design environment, we first create a extra virtual machine layer using our specially customized \texttt{BEE-VM} on top of the host and then deploy Docker on the virtual machine layer. This is a more practical solution because: 
+% first, QEMU is usually enabled in current Linux-based HPC system, 
+QEMU can be built in user space in current Linux-based HPC system,  which allows us to create a virtual machine layer; 
+% added by qguan
+We can achieve close-to-bare-mental performance if KVM is enabled.
+%we can easily customize virtual machines to make them fully compatible with latest vanilla Docker; 
+Virtual machines can be customized to be compatible with latest vanilla version of Docker.
+%third, 
+The most important, Our solution does not require root/administration privileges of the HPC system, so any user can deploy our \texttt{BEE} to HPC systems. Forth, since we do not customize Docker, users can always get benefits from the features of the latest Docker. More specifically, the contributions of this paper include:
+%main contribution
+
+\begin{enumerate}
+\item \textbf{Docker-enabled environment on HPC system:}
+By using \texttt{BEE}, we can provide Docker-enable environment into current HPC systems. HPC users can easily Dockerize their application and run on \texttt{BEE} without reconfiguration for each different HPC systems. Users can also Dockerize their legacy application and run on \texttt{BEE} on current HPC system unmodified.
+
+\item \textbf{Work flow integration:}
+The containerized environment provided by \texttt{BEE} can greatly facilitate the HPC work flow integration without complicated configurations. Different parts in the work flow can be packed in container and viewed as modules, so we can easily integrate different modules together to form the work flow we want using \texttt{BEE}.
+
+\item \textbf{User space deployment on unmodified HPC systems:}
+Since most Linux-based HPC systems have QEMU enabled, normal HPC user can deploy \texttt{BEE} on the HPC system they are using without root account.
+
+\item \textbf{Standard latest Docker support:}
+We run unmodified Docker daemon inside \texttt{BEE}, so users can Dockerize their application in the standard way. Existing Dockerized application can run on \texttt{BEE} unmodified. Also, Docker inside \texttt{BEE} is always upgradeable so that users can always benefit from the latest version of Docker.
+
+\item \textbf{Interfacing Continuous Integration:}
+Many Continuous Integration(CI) of current HPC application development project are using Docker as their output. Since our \texttt{BEE} framework support standard Docker, users can run CI-generated Dockerized application on \texttt{BEE} without any manual configuration.
+
+\item \textbf{Both software and hardware virtulization:}
+Existing solution run container direct on the host, however different hardware on different host may yield different result due to different hardware architect. Our solution, on the other hand, provided another hardware virtulization layer, so that together with Docker container we provided both hardware and software consistent environment. This further enhanced the reproducibility of \texttt{BEE}.
+
+
+\item \textbf{Hybrid HPC and Cloud environment:}
+Besides HPC systems, \texttt{BEE} can also be deployed on cloud computing environment like Amazon Web Services(AWS). We provided the same standard Docker container environment for the users, so user can choose to run their HPC application on cloud without modifying their Dockerized application. 
+
+\item \textbf{Cross platform system level live migration:}
+As we mentioned before, the capability of application level checkpoint/restoration is limited. On the other hand, system level checkpoint/restoration is a better choice, since it does not bounded by the specific application characteristic. So, we integrate Docker level live migration feature in \texttt{BEE}. Users can choose to do live migrate their application across different HPC systems or cloud computing systems.
+
+\end{enumerate}
+
+The rest of this paper is organized as follow: In section 2, we discuss the design details of \texttt{BEE} with evaluation in section 3. In section 4, we provide case study on real HPC application running on \texttt{BEE}. In section 5, we discuss other large scale container-enabled execution environment and how \texttt{BEE} it different from them. Finally, we discuss future work in section 6 and make conclusion in section 7.
+
+
+
+
+

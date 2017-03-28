@@ -1,159 +1,116 @@
-%-------------------------
-%  Initializaed : 9/1/2013
-%  Last modified: 9/5/2013
-%-------------------------
-% Revision : 10/15 by Qiang : 1. Change some figures. 2.Replace the probe algorithm figure with algorithm block. 3. Fix types
-% Revision : 10/15 by Qiang : 1. Fix types (Comments from Sean)
-% Revision : 10/16/by Qiang : 1. change documentclass. 2. fix the bibtex error
-
-%\documentclass[conference]{IEEEtran}
-\documentclass[10, conference, compsocconf ]{IEEEtran}
+\documentclass[sigconf]{acmart}
 \usepackage{xspace,shortcuts}
 \usepackage{times}
 \usepackage{graphicx}
 \usepackage{algorithm}
+\usepackage{algorithmic}
 %\usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage{subfigure}
 \usepackage{multirow}
-\usepackage{courier}
-\usepackage[table]{xcolor}			% Used for coloring the table cells
-\usepackage{caption}
+\usepackage{courier}		% Used for coloring the table cells
 \usepackage{url}
-\usepackage{listings}
+
+\usepackage{booktabs} % For formal tables
+\newcommand\qguan[1]{\textcolor{red}{(#1)}}
+\newcommand\jchen[1]{\textcolor{blue}{(#1)}}
+\newcommand\bluecomment[1]{\textcolor{blue}{// #1}}
+% Copyright
+%\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
 
 
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
+% DOI
+%\acmDOI{10.475/123_4}
 
-\lstset{ %
-	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
-	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-	breaklines=true,                 % sets automatic line breaking
-	captionpos=b,                    % sets the caption-position to bottom
-	commentstyle=\color{mygreen},    % comment style
-	deletekeywords={...},            % if you want to delete keywords from the given language
-	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-	%frame=single,                    % adds a frame around the code
-	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-	keywordstyle=\color{blue},       % keyword style
-	language=Octave,                 % the language of the code
-	morekeywords={*,...},            % if you want to add more keywords to the set
-	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-	numbersep=5pt,                   % how far the line-numbers are from the code
-	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-	showstringspaces=false,          % underline spaces within strings only
-	showtabs=false,                  % show tabs within strings adding particular underscores
-	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-	stringstyle=\color{mymauve},     % string literal style
-	tabsize=2,                       % sets default tabsize to 2 spaces
-%	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
-}
+% ISBN
+%\acmISBN{123-4567-24-567/08/06}
 
+%Conference
+%\acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
+%  Paso, Texas USA} 
+%\acmYear{1997}
+%\copyrightyear{2016}
 
-%% Define special notes
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+%\acmPrice{15.00}
 
-
-
-%\usepackage[subtle]{savetrees}
-%\usepackage[justification=centering]{caption}
-
-%     \let\oldthebibliography=\thebibliography
-%     \let\endoldthebibliography=\endthebibliography
-%     \renewenvironment{thebibliography}[1]{%
-%       \begin{oldthebibliography}{#1}%
-%         \setlength{\parskip}{0.5ex}%
-%         \setlength{\itemsep}{0.10ex}%
-%     }%
-%     {%
-%       \end{oldthebibliography}%
-%     }
-
-
-
-
-%\IEEEoverridecommandlockouts
-%\pagestyle{plain}
-\pagestyle{empty}
 
 \begin{document}
-
 \title{Build and Execution Environments (BEE) :
 an Encapsulated Environment Enabling
-the HPC Application Running Everywhere }
-
-% I have this old-style title here for backup
-%\title{P-FSEFI:  Parallel Fine-grained Soft Error Fault Injecion Tool for Profiling Distributed Application Vulnerability}
+the HPC Application Running Everywhere}
 
 
 \author{Anonymous } 
-%\IEEEauthorblockN{XXX YYY}
-%\IEEEauthorblockA{Ultrascale Systems Research Center\\
-%Los Alamos National Laboratory$^1$ \\
-%\{XXX YYY\}@lanl.gov}
-
-%\and
-%\IEEEauthorblockN{Panruo Wu and Zizhong Chen}
-%\IEEEauthorblockA{Department of Computer Science and Engineering\\
-%University of California, Riverside\\
-%% pwu011@ucr.edu,chen@cs.ucr.edu}
 
 
-%\author{\IEEEauthorblockN{Qiang Guan\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Nathan DeBardeleben\IEEEauthorrefmark{2}, Sean Blanchard\IEEEauthorrefmark{2} and
-%Song Fu\IEEEauthorrefmark{1}
-%}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Science and Engineering\\
-%University of North Texas\\ Email: QiangGuan@my.unt.edu, Song.Fu@unt.edu}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Ultrascale Systems Research Center\\
-% Los Alamos National Laboratory$^1$, Los Alamos, New Mexico\\
-%Email: \{ndebard,   seanb\}@lanl.gov}
-%}
-\maketitle
-
-%\footnotetext[1]{This work was performed at the Ultrascale
-%Systems Research Center (USRC) at Los Alamos National Laboratory,
-%supported by the U.S. Department of Energy contract AC52-06NA25396. The
-%publication has been assigned the LANL identifier LA-UR-XX-XXXXX.}
-%\thispagestyle{empty}
-%\thispagestyle{plain}
 
 \begin{abstract}
 \input{abstract}
 \end{abstract}
 
-\begin{IEEEkeywords}
-   High Performance Computing, Cloud Computing, Container.\\
-\end{IEEEkeywords}
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below. 
+%
+%\begin{CCSXML}
+%<ccs2012>
+% <concept>
+%  <concept_id>10010520.10010553.10010562</concept_id>
+ % <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%  <concept_significance>500</concept_significance>
+% </concept>
+ %<concept>
+  %concept_id>10010520.10010575.10010755</concept_id>
+ % <concept_desc>Computer systems organization~Redundancy</concept_desc>
+ % <concept_significance>300</concept_significance>
+ %</concept>
+ %<concept>
+  %<concept_id>10010520.10010553.10010554</concept_id>
+ % <concept_desc>Computer systems organization~Robotics</concept_desc>
+ % <concept_significance>100</concept_significance>
+ %</concept>
+% <concept>
+  %<concept_id>10003033.10003083.10003095</concept_id>
+  %<concept_desc>Networks~Network reliability</concept_desc>
+ % <concept_significance>100</concept_significance>
+ %</concept>
+%</ccs2012>  
+%\end{CCSXML}
+
+%\ccsdesc[500]{Computer systems organization~Embedded systems}
+%\ccsdesc[300]{Computer systems organization~Redundancy}
+%\ccsdesc{Computer systems organization~Robotics}
+%\ccsdesc[100]{Networks~Network reliability}
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{High Performance Computing, Cloud Computing, Container.}
+
+
+\maketitle
 
 \input{introduction}
-\input{related}
+
 \input{design}
 \input{eval}
 \input{case_study}
+\input{related}
 \input{discussions}
 \input{conclusion}
 
-%\section*{Acknowledgement}
-%       We would like to thank the anonymous reviewers for their constructive
-%       comments and suggestions. Ultrascale Systems Research Center (USRC) is
-%       a collaboration between Los Alamos National Laboratory and the New
-%       Mexico Consortium (NMC).
-%       
-%       This research was supported in part by U.S. National Science
-%       Foundation grant CNS-0915396, Los Alamos National Laboratory grant
-%       IAS-1103, and the U.S. Department of Energy contract
-%       DE-FC02-06ER25750. \\
-
 \bibliographystyle{acm}
-\bibliography{refer}
+\bibliography{refer} 
+
 \end{document}
-
-

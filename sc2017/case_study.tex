@@ -1,3 +1,5 @@
 \section{Case Study}
   \label{sec:case_study}
-
+  \subsection{VPIC}
+  In the section, we provide case study on BEE when running real HPC applications. We choose to test Vector Particle-In-Cell(VPIC) simulation tool \cite{bowers20080, bowers2008ultrahigh, bowers2009advances} on BEE. VPIC is a general purpose particle-in-cell simulation tool for modeling kinetic plasmas in multiple spatial dimensions. VPIC is large scale parallel application that runs on multiple nodes using MPI and pthreads. It has optimzied for modern computing architectures by using short-vector, single-instruction-multiple-data (SIMD) instructions and cache optimization. Before the simulation begin, VPIC first need to load input deck and user configuration from files and write to output when done. Flexible checkpoint-restart semantics enabling VPIC checkpoint files to be read as input for subsequent simulations. VPIC has a native I/O format that interfaces with the high-performance visualization software Ensight and Paraview. 
+	

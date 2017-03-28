@@ -3,7 +3,6 @@ LATEXMK      = latexmk
 LATEXMKFLAGS = -f -pdf -g
 LATEXMKCLEAN = -C
 
-#SOURCES      = FSEFI.tex
 SOURCES      = main.tex
 EXECS        = $(SOURCES:.tex=.pdf)
 BASE         = $(SOURCES:.tex=)
