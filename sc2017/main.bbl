@@ -1,0 +1,152 @@
+\begin{thebibliography}{10}
+
+\bibitem{awscontainer}
+Aws container service.
+\newblock Available on-line at: \url{https://aws.amazon.com/ecs/}.
+
+\bibitem{criu}
+Checkpoint/restoration in userspace.
+\newblock Available on-line at:\url{https://criu.org/Docker}.
+
+\bibitem{Docker}
+Docker.
+\newblock Available on-line at: \url{https://www.docker.com/}.
+
+\bibitem{IOR}
+Ior benchmark.
+\newblock Available on-line at:
+  \url{http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/ior/}.
+
+\bibitem{packer}
+Packer.
+\newblock Available on-line at: \url{https://www.packer.io/}.
+
+\bibitem{anedda2010suspending}
+{\sc Anedda, P., Leo, S., Manca, S., Gaggero, M., and Zanetti, G.}
+\newblock Suspending, migrating and resuming hpc virtual clusters.
+\newblock {\em Future Generation Computer Systems 26}, 8 (2010), 1063--1072.
+
+\bibitem{boettiger2015introduction}
+{\sc Boettiger, C.}
+\newblock An introduction to docker for reproducible research.
+\newblock {\em ACM SIGOPS Operating Systems Review 49}, 1 (2015), 71--79.
+
+\bibitem{bowers2008ultrahigh}
+{\sc Bowers, K.~J., Albright, B., Yin, L., Bergen, B., and Kwan, T.}
+\newblock Ultrahigh performance three-dimensional electromagnetic relativistic
+  kinetic plasma simulation a.
+\newblock {\em Physics of Plasmas 15}, 5 (2008), 055703.
+
+\bibitem{bowers20080}
+{\sc Bowers, K.~J., Albright, B.~J., Bergen, B., Yin, L., Barker, K.~J., and
+  Kerbyson, D.~J.}
+\newblock 0.374 pflop/s trillion-particle kinetic modeling of laser plasma
+  interaction on roadrunner.
+\newblock In {\em Proceedings of the 2008 ACM/IEEE conference on
+  Supercomputing\/} (2008), IEEE Press, p.~63.
+
+\bibitem{bowers2009advances}
+{\sc Bowers, K.~J., Albright, B.~J., Yin, L., Daughton, W., Roytershteyn, V.,
+  Bergen, B., and Kwan, T.}
+\newblock Advances in petascale kinetic plasma simulation with vpic and
+  roadrunner.
+\newblock In {\em Journal of Physics: Conference Series\/} (2009), vol.~180,
+  IOP Publishing, p.~012055.
+
+\bibitem{gugnani2016performance}
+{\sc Gugnani, S., Lu, X., and Panda, D.~K.}
+\newblock Performance characterization of hadoop workloads on sr-iov-enabled
+  virtualized infiniband clusters.
+\newblock In {\em Proceedings of the 3rd IEEE/ACM International Conference on
+  Big Data Computing, Applications and Technologies\/} (2016), ACM, pp.~36--45.
+
+\bibitem{harji2013our}
+{\sc Harji, A.~S., Buhr, P.~A., and Brecht, T.}
+\newblock Our troubles with linux kernel upgrades and why you should care.
+\newblock {\em ACM SIGOPS Operating Systems Review 47}, 2 (2013), 66--72.
+
+\bibitem{huang2007high}
+{\sc Huang, W., Gao, Q., Liu, J., and Panda, D.~K.}
+\newblock High performance virtual machine migration with rdma over modern
+  interconnects.
+\newblock In {\em Cluster Computing, 2007 IEEE International Conference on\/}
+  (2007), IEEE, pp.~11--20.
+
+\bibitem{huang2006case}
+{\sc Huang, W., Liu, J., Abali, B., and Panda, D.~K.}
+\newblock A case for high performance computing with virtual machines.
+\newblock In {\em Proceedings of the 20th annual international conference on
+  Supercomputing\/} (2006), ACM, pp.~125--134.
+
+\bibitem{jacobsen2015contain}
+{\sc Jacobsen, D.~M., and Canon, R.~S.}
+\newblock Contain this, unleashing docker for hpc.
+\newblock {\em Proceedings of the Cray User Group\/} (2015).
+
+\bibitem{kurtzer_2016_60736}
+{\sc Kurtzer, G.~M.}
+\newblock {Singularity 2.1.2 - Linux application and environment containers for
+  science}, Aug. 2016.
+
+\bibitem{liu2006high}
+{\sc Liu, J., Huang, W., Abali, B., and Panda, D.~K.}
+\newblock High performance vmm-bypass i/o in virtual machines.
+\newblock In {\em USENIX Annual Technical Conference, General Track\/} (2006),
+  pp.~29--42.
+
+\bibitem{mateescu2011hybrid}
+{\sc Mateescu, G., Gentzsch, W., and Ribbens, C.~J.}
+\newblock Hybrid computing?where hpc meets grid and cloud computing.
+\newblock {\em Future Generation Computer Systems 27}, 5 (2011), 440--453.
+
+\bibitem{merkel2014docker}
+{\sc Merkel, D.}
+\newblock Docker: lightweight linux containers for consistent development and
+  deployment.
+\newblock {\em Linux Journal 2014}, 239 (2014), 2.
+
+\bibitem{priedhorsky2016charliecloud}
+{\sc Priedhorsky, R., and Randles, T.}
+\newblock Charliecloud: Unprivileged containers for user-defined software
+  stacks in hpc.
+\newblock Tech. rep., Los Alamos National Laboratory (LANL), 2016.
+
+\bibitem{reuther2012hpc}
+{\sc Reuther, A., Michaleas, P., Prout, A., and Kepner, J.}
+\newblock Hpc-vms: Virtual machines in high performance computing systems.
+\newblock In {\em High Performance Extreme Computing (HPEC), 2012 IEEE
+  Conference on\/} (2012), IEEE, pp.~1--6.
+
+\bibitem{russell2008virtio}
+{\sc Russell, R.}
+\newblock virtio: towards a de-facto standard for virtual i/o devices.
+\newblock {\em ACM SIGOPS Operating Systems Review 42}, 5 (2008), 95--103.
+
+\bibitem{tikotekar2008analysis}
+{\sc Tikotekar, A., Vall{\'e}e, G., Naughton, T., Ong, H., Engelmann, C., and
+  Scott, S.~L.}
+\newblock An analysis of hpc benchmarks in virtual machine environments.
+\newblock In {\em European Conference on Parallel Processing\/} (2008),
+  Springer, pp.~63--71.
+
+\bibitem{vallee2008system}
+{\sc Vallee, G., Naughton, T., Engelmann, C., Ong, H., and Scott, S.~L.}
+\newblock System-level virtualization for high performance computing.
+\newblock In {\em Parallel, Distributed and Network-Based Processing, 2008. PDP
+  2008. 16th Euromicro Conference on\/} (2008), IEEE, pp.~636--643.
+
+\bibitem{voorsluys2009cost}
+{\sc Voorsluys, W., Broberg, J., Venugopal, S., and Buyya, R.}
+\newblock Cost of virtual machine live migration in clouds: A performance
+  evaluation.
+\newblock In {\em IEEE International Conference on Cloud Computing\/} (2009),
+  Springer, pp.~254--265.
+
+\bibitem{zhang2016slurm}
+{\sc Zhang, J., Lu, X., Chakraborty, S., and Panda, D. K.~D.}
+\newblock Slurm-v: Extending slurm for building efficient hpc cloud with sr-iov
+  and ivshmem.
+\newblock In {\em European Conference on Parallel Processing\/} (2016),
+  Springer, pp.~349--362.
+
+\end{thebibliography}
