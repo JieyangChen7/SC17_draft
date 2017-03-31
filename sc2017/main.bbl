@@ -4,10 +4,6 @@
 Aws container service.
 \newblock Available on-line at: \url{https://aws.amazon.com/ecs/}.
 
-\bibitem{criu}
-Checkpoint/restoration in userspace.
-\newblock Available on-line at:\url{https://criu.org/Docker}.
-
 \bibitem{Docker}
 Docker.
 \newblock Available on-line at: \url{https://www.docker.com/}.
@@ -20,11 +16,6 @@ Ior benchmark.
 \bibitem{packer}
 Packer.
 \newblock Available on-line at: \url{https://www.packer.io/}.
-
-\bibitem{anedda2010suspending}
-{\sc Anedda, P., Leo, S., Manca, S., Gaggero, M., and Zanetti, G.}
-\newblock Suspending, migrating and resuming hpc virtual clusters.
-\newblock {\em Future Generation Computer Systems 26}, 8 (2010), 1063--1072.
 
 \bibitem{boettiger2015introduction}
 {\sc Boettiger, C.}
@@ -53,6 +44,12 @@ Packer.
 \newblock In {\em Journal of Physics: Conference Series\/} (2009), vol.~180,
   IOP Publishing, p.~012055.
 
+\bibitem{fowler2006continuous}
+{\sc Fowler, M., and Foemmel, M.}
+\newblock Continuous integration.
+\newblock {\em Thought-Works) http://www. thoughtworks. com/Continuous
+  Integration. pdf\/} (2006), 122.
+
 \bibitem{gugnani2016performance}
 {\sc Gugnani, S., Lu, X., and Panda, D.~K.}
 \newblock Performance characterization of hadoop workloads on sr-iov-enabled
@@ -64,13 +61,6 @@ Packer.
 {\sc Harji, A.~S., Buhr, P.~A., and Brecht, T.}
 \newblock Our troubles with linux kernel upgrades and why you should care.
 \newblock {\em ACM SIGOPS Operating Systems Review 47}, 2 (2013), 66--72.
-
-\bibitem{huang2007high}
-{\sc Huang, W., Gao, Q., Liu, J., and Panda, D.~K.}
-\newblock High performance virtual machine migration with rdma over modern
-  interconnects.
-\newblock In {\em Cluster Computing, 2007 IEEE International Conference on\/}
-  (2007), IEEE, pp.~11--20.
 
 \bibitem{huang2006case}
 {\sc Huang, W., Liu, J., Abali, B., and Panda, D.~K.}
@@ -134,13 +124,6 @@ Packer.
 \newblock System-level virtualization for high performance computing.
 \newblock In {\em Parallel, Distributed and Network-Based Processing, 2008. PDP
   2008. 16th Euromicro Conference on\/} (2008), IEEE, pp.~636--643.
-
-\bibitem{voorsluys2009cost}
-{\sc Voorsluys, W., Broberg, J., Venugopal, S., and Buyya, R.}
-\newblock Cost of virtual machine live migration in clouds: A performance
-  evaluation.
-\newblock In {\em IEEE International Conference on Cloud Computing\/} (2009),
-  Springer, pp.~254--265.
 
 \bibitem{zhang2016slurm}
 {\sc Zhang, J., Lu, X., Chakraborty, S., and Panda, D. K.~D.}
