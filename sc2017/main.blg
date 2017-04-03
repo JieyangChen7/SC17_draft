@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: acm.bst
+Database file #1: refer.bib
+Warning--I didn't find a database entry for ""
+Warning--to sort, need author or key in Docker
+Warning--to sort, need author or key in awscontainer
+Warning--to sort, need author or key in packer
+Warning--to sort, need author or key in IOR
+Warning--can't use both volume and number fields in bowers2009advances
+You've used 23 entries,
+            2253 wiz_defined-function locations,
+            652 strings with 7983 characters,
+and the built_in function-call counts, 7953 in all, are:
+= -- 760
+> -- 362
+< -- 0
++ -- 154
+- -- 128
+* -- 579
+:= -- 1213
+add.period$ -- 64
+call.type$ -- 23
+change.case$ -- 134
+chr.to.int$ -- 0
+cite$ -- 28
+duplicate$ -- 322
+empty$ -- 671
+format.name$ -- 128
+if$ -- 1716
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 17
+newline$ -- 113
+num.names$ -- 38
+pop$ -- 170
+preamble$ -- 1
+purify$ -- 110
+quote$ -- 0
+skip$ -- 241
+stack$ -- 0
+substring$ -- 433
+swap$ -- 104
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 92
+warning$ -- 5
+while$ -- 72
+width$ -- 25
+write$ -- 227
+(There were 6 warnings)
