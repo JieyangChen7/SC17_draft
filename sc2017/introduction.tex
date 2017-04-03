@@ -8,7 +8,7 @@ Because different HPC system usually have different software and hardware config
 
 Virtualized environment, especially virtual machine, has been well studied in HPC system to provide more consistent, isolated and secure environment \cite{vallee2008system, reuther2012hpc}. For example, \cite{huang2006case} built a virtualized HPC environment using Xen-based virtual machines. By leveraging high performance I/O passthrough \cite{liu2006high}, it can achieve near-native performance when running HPC benchmarks. In \cite{zhang2016slurm} showed at current resource manager in HPC system cannot well supervise virtual machines and associated critical resource, so they proposed a Slurm-V, which extends Slurm with virtualization-oriented capabilities. \cite{gugnani2016performance, tikotekar2008analysis} characterized the performance  of running multiple kinds of application on virtualized HPC clusters. \cite{} proposed Inter-VM Communication (IVC), a VM-aware communication library to support efficient shared memory communication among computing processes on the same physical host and then they built a MPI library with IVC enabled.
 
-However, managing virtual machine image is not trivial, since virtual machine image need to contain files of operating system, dependent libraries/packages, user applications and input/output data, which may takes several gigabytes on disk space. Migrating images between HPC systems or distribute images among computing nodes can takes a lot of time. On the other hand, Linux container technology like Docker \cite{Docker} \cite{awscontainer} enables consistent execution environment for development, build and deployment. By developing using Docker, developers only need to build their application once in Docker on their local machine, then the application can run on any Docker-enabled machine. It only needs to ship the Docker images to the target machine. Docker image only contains dependent libraries/packages and user application, which has much less size than virtual machine images \cite{boettiger2015introduction}. Also, since Docker creates a thin translation layer that allows the guest application to share the host operating system, the performance penalty is negligible \cite{merkel2014docker}.
+However, managing virtual machine image is not trivial, since virtual machine image need to contain files of operating system, dependent libraries/packages, user applications and input/output data, which may takes several gigabytes on disk space. Migrating images between HPC systems or distribute images among computing nodes can takes a lot of time. On the other hand, Linux container technology like Docker \cite{Docker} \cite{awscontainer} enables consistent execution environment for development, build and deployment. By developing using Docker, developers only need to build their application once in Docker on their local machine, then the application can run on any Docker-enabled machine. It only needs to ship the Docker images to the target machine. Docker image only contains dependent libraries/packages and user application, which has much less size than virtual machine images \cite{boettiger2015introduction}. Also, since Docker creates a thin translation layer that allows the guest application to share the host operating system, the performance penalty is negligible \cite{merkel2014docker, ruan2016performance}.
 
 It would be of great benefit to bring the advantages of Docker realized in the cloud to HPC users, however, Docker is not usually installed on current HPC systems. The main reason behind it is that Docker requires Linux kernel version to be higher than 3.8, but current main stream Linux kernel version is far behind this version \cite{harji2013our}. For compatibility and security consideration, it would take years before HPC systems can upgrade their Linux kernel. 
 
@@ -27,7 +27,7 @@ Users should have the flexibility choose different platform as their needs chang
 \item \textbf{Reproducibility:}
 Applications should behave exactly the same across platforms regardless the underlying software and hardware configurations.
 \item \textbf{Interfacing Continuous Integration:}
-Continuous Integration(IC) has been widely used in HPC application development workflow. The execution framework should be interfacing IC, so that it can effective free HPC domain users from handling complicated application configurations.  
+Continuous Integration (IC) has been widely used in HPC application development workflow. The execution framework should be interfacing IC, so that it can effective free HPC domain users from handling complicated application configurations.  
 \end{enumerate}
 
 %our work
@@ -40,8 +40,8 @@ The most important, our solution does not require root/administration privileges
 \item \textbf{Docker-enabled environment on HPC system:}
 By using \texttt{BEE}, we can provide Docker-enable environment into current HPC systems. HPC users can easily Dockerize their application and run on \texttt{BEE} without reconfiguration across different HPC systems. Users can also Dockerize their legacy applications and run on \texttt{BEE} on current HPC systems unmodified.
 
-\item \textbf{Work flow integration:}
-The containerized environment provided by \texttt{BEE} can greatly facilitate the HPC work flow integration without complicated configurations. Different parts in the work flow can be packed in container and viewed as modules, so we can easily integrate different modules together to form the work flow we want using \texttt{BEE}.
+\item \textbf{Workflow integration:}
+The containerized environment provided by \texttt{BEE} can greatly facilitate the HPC workflow integration without complicated configurations. Different parts in the workflow can be packed in container and viewed as modules, so we can easily integrate different modules together to form the workflow we want using \texttt{BEE}.
 
 \item \textbf{User space deployment on unmodified HPC systems:}
 On all QEMU compatible systems, users can deploy \texttt{BEE} on the HPC system they are using without root account.
@@ -57,7 +57,7 @@ Existing solution run container direct on the host, however different hardware o
 
 
 \item \textbf{Hybrid HPC and Cloud environment:}
-Besides HPC systems, \texttt{BEE} can also be deployed on cloud computing environment, such as Amazon Web Services(AWS). We provide the same standard Docker environment for users, so that users can run their HPC application on the cloud without modification.
+Besides HPC systems, \texttt{BEE} can also be deployed on cloud computing environment, such as Amazon Web Services (AWS). We provide the same standard Docker environment for users, so that users can run their HPC application on the cloud without modification.
 
 %\item \textbf{Cross platform system level live migration:}
 %s we mentioned before, the capability of application level checkpoint/restoration is limited. On the other hand, system level checkpoint/restoration is a better choice, since it does not bounded by the specific application characteristic. So, we integrate Docker level live migration feature in \texttt{BEE}. Users can choose to do live migrate their application across different HPC systems or cloud computing systems.

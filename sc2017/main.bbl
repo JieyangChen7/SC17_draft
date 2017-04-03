@@ -107,6 +107,13 @@ Packer.
 \newblock In {\em High Performance Extreme Computing (HPEC), 2012 IEEE
   Conference on\/} (2012), IEEE, pp.~1--6.
 
+\bibitem{ruan2016performance}
+{\sc Ruan, B., Huang, H., Wu, S., and Jin, H.}
+\newblock A performance study of containers in cloud environment.
+\newblock In {\em Advances in Services Computing: 10th Asia-Pacific Services
+  Computing Conference, APSCC 2016, Zhangjiajie, China, November 16-18, 2016,
+  Proceedings 10\/} (2016), Springer, pp.~343--356.
+
 \bibitem{russell2008virtio}
 {\sc Russell, R.}
 \newblock virtio: towards a de-facto standard for virtual i/o devices.
